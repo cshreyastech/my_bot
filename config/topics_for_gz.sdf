@@ -1,0 +1,6 @@
+<model name="gz_topics">
+  <!-- Gazebo system plugin for velocity control -->
+  <plugin name="robot_description" filename="robot_description">
+    <topic>/robot_description</topic>
+  </plugin>
+</model>

@@ -1,0 +1,9 @@
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/uninstall.dir
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/my_bot_uninstall.dir
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/test.dir
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/edit_cache.dir
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/rebuild_cache.dir
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/list_install_components.dir
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/install.dir
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/install/local.dir
+/mnt/localcodebase/ros2_ws/src/my_bot/build/my_bot/CMakeFiles/install/strip.dir
