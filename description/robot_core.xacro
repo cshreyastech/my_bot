@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
-
+<robot name="my_bot_ddr" xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:include filename="inertial_macros.xacro"/>
   <material name="white">
     <color rgba="1 1 1 1" />
@@ -17,6 +16,10 @@
   <material name="black">
     <color rgba="0 0 0 1" />
   </material>
+
+
+  <!-- Over here we include the file that defines extra Gazebo options and motion control driver -->
+  <xacro:include filename="$(find my_bot)/description/robot.xacro.gazebo" />
 
   <!-- BASE LINK -->
   <link name="base_link">
@@ -49,7 +52,12 @@
       <origin xyz="0.15 0 0.075" rpy="0 0 0"/>
     </xacro:inertial_box>
   </link>
-  
+
+  <!-- <gazebo reference="chassis">
+    <material>Gazebo/White</material>
+  </gazebo> -->
+
+  <!-- LEFT WHEEL LINK -->  
   <joint name="left_wheel_joint" type="continuous">
     <parent link="base_link" />
     <child link="left_wheel" />
@@ -58,17 +66,12 @@
   </joint>
 
 
-  <gazebo reference="chassis">
-    <material>Gazebo/White</material>
-  </gazebo>
-
-  <!-- LEFT WHEEL LINK -->
   <link name="left_wheel">
     <visual>
       <geometry>
         <cylinder radius="0.05" length="0.04" />
       </geometry>
-      <material name="blue"/>
+      <!-- <material name="blue"/> -->
     </visual>
 
     <collision>
@@ -82,6 +85,11 @@
     </xacro:inertial_cylinder>
   </link>
 
+  <!-- <gazebo reference="left_wheel">
+    <material>Gazebo/White</material>
+  </gazebo> -->
+
+  <!-- RIGHT WHEEL LINK -->
   <joint name="right_wheel_joint" type="continuous">
     <parent link="base_link" />
     <child link="right_wheel" />
@@ -89,11 +97,6 @@
     <axis xyz="0 0 -1" />
   </joint>
 
-  <gazebo reference="left_wheel">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-
-  <!-- RIGHT WHEEL LINK -->
   <link name="right_wheel">
     <visual>
       <geometry>
@@ -113,9 +116,9 @@
     </xacro:inertial_cylinder>
   </link>
 
-  <gazebo reference="right_wheel">
+  <!-- <gazebo reference="right_wheel">
     <material>Gazebo/Blue</material>
-  </gazebo>
+  </gazebo> -->
 
   <!-- CASTER WHEEL LINK -->
   <joint name="caster_wheel_joint" type="fixed">
@@ -143,8 +146,9 @@
     </xacro:inertial_sphere>
   </link>
 
-  <gazebo reference="cahster_wheel">
+  <!-- <gazebo reference="cahster_wheel">
     <material>Gazebo/Black</material>
   </gazebo>
+   -->
   
 </robot>
