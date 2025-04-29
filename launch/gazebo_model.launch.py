@@ -54,7 +54,6 @@ def generate_launch_description():
   # this is if you are using an empty world model
   gazeboLaunch = IncludeLaunchDescription(gazebo_rosPackageLaunch, launch_arguments={'gz_args': ['-r -v -v4 empty.sdf'], 'on_exit_shutdown': 'true'}.items())
 
-
   # Gazebo node
   spawnModelNodeGazebo = Node(
     package='ros_gz_sim',
@@ -65,7 +64,6 @@ def generate_launch_description():
     ],
     output='screen'
   )
-
 
   # Robot State Publisher node
   nodeRobotStatePublisher = Node(

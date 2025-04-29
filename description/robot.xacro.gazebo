@@ -19,7 +19,7 @@
     <material>Gazebo/Blue</material>
   </gazebo>
 
-  <gazebo reference="cahster_wheel">
+  <gazebo reference="caster_wheel">
     <mu1>0.000002</mu1>
     <mu2>0.000002</mu2>
     <material>Gazebo/Black</material>
@@ -27,13 +27,14 @@
 
   <gazebo>
     <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+
       <!-- wheels -->
       <right_joint>left_wheel_joint</right_joint>
       <left_joint>right_wheel_joint</left_joint>
 
       <!-- kinematics -->
-      <wheel_separation>${2*0.175}</wheel_separation>
-      <wheel_diameter>${2*0.05}</wheel_diameter>
+      <wheel_separation>0.35</wheel_separation>
+      <wheel_diameter>0.1</wheel_diameter>
 
       <!-- limits -->
       <max_linear_acceleration>10</max_linear_acceleration>
@@ -43,9 +44,8 @@
       <tf_topic>/tf</tf_topic>
       <odom_topic>odom</odom_topic>
       <frame_id>odom</frame_id>
-      <child_frame_id>base_footprint</child_frame_id>
+      <child_frame_id>base_link</child_frame_id>
       <odom_publisher_frequency>30</odom_publisher_frequency>
-
     </plugin>
 
     <!-- Joint state publisher -->
