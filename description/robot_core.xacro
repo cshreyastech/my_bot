@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot name="my_bot_ddr" xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:include filename="inertial_macros.xacro"/>
-  <xacro:include filename="$(find my_bot)/description/robot.xacro.gazebo" />  
 
   <material name="white">
     <color rgba="1 1 1 1" />
@@ -21,7 +20,6 @@
 
   <!-- BASE LINK -->
   <link name="base_link"></link>
-
 
   <!-- CHASSIS LINK -->
   <joint name="chassis_joint" type="fixed">

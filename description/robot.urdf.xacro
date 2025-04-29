@@ -4,5 +4,5 @@
   <xacro:include filename="robot_core.xacro" />
   
   <!-- Over here we include the file that defines extra Gazebo options and motion control driver -->
-  <!-- <xacro:include filename="$(find my_bot)/description/robot.xacro.gazebo" />   -->
+  <xacro:include filename="$(find my_bot)/description/robot.xacro.gazebo" />  
 </robot>
