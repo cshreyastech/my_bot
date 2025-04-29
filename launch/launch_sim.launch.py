@@ -8,6 +8,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
   package_name = 'my_bot'
+
   rsp = IncludeLaunchDescription(
     PythonLaunchDescriptionSource([os.path.join(
       get_package_share_directory(
@@ -15,22 +16,23 @@ def generate_launch_description():
     )]), launch_arguments={'use_sim_time': 'true'}.items()
   )
 
-  joint_state_publisher_gui = Node(
-            package='joint_state_publisher_gui',
-            executable='joint_state_publisher_gui',
-            name='joint_state_publisher_gui',
-            output='screen'
-            )
+  # joint_state_publisher_gui = Node(
+  #           package='joint_state_publisher_gui',
+  #           executable='joint_state_publisher_gui',
+  #           name='joint_state_publisher_gui',
+  #           output='screen'
+  #           )
+  
   rviz2 = Node(
-          package='rviz2',
-          executable='rviz2',
-          name='rviz2',
-          output='screen',
-          arguments=['-d', 'src/my_bot/config/my_bot.rviz']
-          )
+    package='rviz2',
+    executable='rviz2',
+    name='rviz2',
+    output='screen',
+    arguments=['-d', 'src/my_bot/config/my_bot_v2.rviz']
+  )
 
   return LaunchDescription([
     rsp,
-    joint_state_publisher_gui,
+    # joint_state_publisher_gui,
     rviz2
   ])

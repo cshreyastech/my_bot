@@ -48,11 +48,19 @@ def generate_launch_description():
   
   # this ithe launch description
 
+  world_path = os.path.join(
+        get_package_share_directory('my_bot'),
+        'worlds',
+        'custom_world.sdf'
+    )
+  
   # this is if you are using your own world model
-  # gazeboLaunch = IncludeLaunchDescription(gazebo_rosPackageLaunch, launch_arguments={'gz_args': ['-r -v -v4', pathWorldFile], 'on_exit_shutdown': 'true'}.tiems())
+  # gazeboLaunch = IncludeLaunchDescription(gazebo_rosPackageLaunch, launch_arguments={'gz_args': ['-r -v -v4 /mnt/localcodebase/ros2_ws/src/my_bot/worlds/custom_world.sdf'], 'on_exit_shutdown': 'true'}.items())
+  gazeboLaunch = IncludeLaunchDescription(gazebo_rosPackageLaunch, launch_arguments={'gz_args': f"-r -v 4 {world_path}"}.items())
 
   # this is if you are using an empty world model
-  gazeboLaunch = IncludeLaunchDescription(gazebo_rosPackageLaunch, launch_arguments={'gz_args': ['-r -v -v4 empty.sdf'], 'on_exit_shutdown': 'true'}.items())
+  # gazeboLaunch = IncludeLaunchDescription(gazebo_rosPackageLaunch, launch_arguments={'gz_args': ['-r -v -v4 empty.sdf'], 'on_exit_shutdown': 'true'}.items())
+  
 
   # Gazebo node
   spawnModelNodeGazebo = Node(
