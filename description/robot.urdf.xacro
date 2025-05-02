@@ -3,6 +3,15 @@
 
   <xacro:include filename="robot_core.xacro" />
   
+  <!-- <xacro:if value="$(arg use_ros2_control)">
+    <xacro:include filename="ros2_control.xacro" />
+  </xacro:if> -->
+  
+  <!-- <xacro:unless value="$(arg use_ros2_control)"> -->
+    <!-- <xacro:include filename="gazebo_control.xacro" /> -->
+  <!-- </xacro:unless> -->
+
   <!-- Over here we include the file that defines extra Gazebo options and motion control driver -->
-  <xacro:include filename="$(find my_bot)/description/robot.xacro.gazebo" />  
+  <xacro:include filename="$(find my_bot)/description/robot.xacro.gazebo" /> 
+  <xacro:include filename="$(find my_bot)/description/lidar.xacro" /> 
 </robot>
