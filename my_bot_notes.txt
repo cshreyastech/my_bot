@@ -27,3 +27,22 @@ Interactig with ControllerManager
 sudo apt install ros-jazzy-ros2-control ros-jazzy-ros2-controllers ros-jazzy-gz-ros2-control
 sudo apt update
 sudo apt upgrade
+------
+ros2 control list_hardware_interfaces 
+command interfaces
+	diff_cont/angular/velocity [available] [unclaimed]
+	diff_cont/linear/velocity [available] [unclaimed]
+	left_wheel_joint/velocity [available] [claimed]
+	right_wheel_joint/velocity [available] [claimed]
+state interfaces
+	left_wheel_joint/position
+	left_wheel_joint/velocity
+	right_wheel_joint/position
+	right_wheel_joint/velocity
+---------------------------
+ros2 control list_controllers
+
+sudo apt install ros-jazzy-slam-toolbox
+ros2 launch slam_toolbox online_async_launch.py params_file:=./src/my_bot/config/mapper_params_online_async.yaml use_sim_time:=true
+
+ros-jazzy-navigation2
